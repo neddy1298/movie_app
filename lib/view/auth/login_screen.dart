@@ -1,5 +1,6 @@
 
-import 'package:cinema_app/view/main/home_screen.dart';
+
+import 'package:cinema_app/view/main/main_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginForm extends StatelessWidget {
@@ -57,7 +58,7 @@ class LoginForm extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const HomePage()),
+                    MaterialPageRoute(builder: (context) => const MainPage()),
                   );
                 },
               ),
