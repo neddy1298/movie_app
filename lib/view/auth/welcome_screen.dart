@@ -31,8 +31,8 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
+        decoration: BoxDecoration(
+          image: const DecorationImage(
             image: AssetImage('assets/images/welcome_background.jpg'),
             fit: BoxFit.cover,
           ),
@@ -75,11 +75,12 @@ class _WelcomePageState extends State<WelcomePage> {
                     ),
                   ),
                   const Spacer(),
-                  if (!showLoginForm && !showRegisterForm) ...[
+                  if (!showLoginForm && !showRegisterForm)
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: Padding(
-                        padding: const EdgeInsets.only(bottom: 40.0, left: 20.0, right: 20.0),
+                        padding: const EdgeInsets.only(
+                            bottom: 40.0, left: 20.0, right: 20.0),
                         child: SizedBox(
                           width: double.infinity,
                           height: 60.0,
@@ -93,7 +94,6 @@ class _WelcomePageState extends State<WelcomePage> {
                         ),
                       ),
                     ),
-                  ],
                   Visibility(
                     visible: showLoginForm || showRegisterForm,
                     child: AnimatedCrossFade(

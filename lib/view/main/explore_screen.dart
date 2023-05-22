@@ -1,8 +1,9 @@
 import 'package:cinema_app/data/movie_data.dart';
 import 'package:flutter/material.dart';
+import 'package:cinema_app/view/main/movie_detail_screen.dart';
 
 class ExplorePage extends StatelessWidget {
-  const ExplorePage({super.key});
+  const ExplorePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +17,15 @@ class ExplorePage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
-
                 Text(
                   'Explore the movie \nyou prefer',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.left,
                 ),
-                Icon(Icons.settings, color: Colors.white,),
+                Icon(
+                  Icons.settings,
+                  color: Colors.white,
+                ),
               ],
             ),
           ),
@@ -34,7 +37,8 @@ class ExplorePage extends StatelessWidget {
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
-                color: Colors.orange,),
+                color: Colors.orange,
+              ),
             ),
           ),
           SizedBox(
@@ -49,7 +53,7 @@ class ExplorePage extends StatelessWidget {
                     label: Text(categories[index]),
                     backgroundColor: const Color(0xFF343440),
                     labelStyle: const TextStyle(
-                    color: Colors.white,
+                      color: Colors.white,
                     ),
                   ),
                 );
@@ -77,36 +81,48 @@ class ExplorePage extends StatelessWidget {
               ),
               itemCount: movieList.length,
               itemBuilder: (context, index) {
-                return Card(
-                  color: Colors.transparent,
-                  elevation: 0,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            image: DecorationImage(
-                              image: AssetImage(movieList[index].imagePath),
-                              fit: BoxFit.fill,
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MovieDetailPage(
+                          movie: movieList[index],
+                        ),
+                      ),
+                    );
+                  },
+                  child: Card(
+                    color: Colors.transparent,
+                    elevation: 0,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              image: DecorationImage(
+                                image: AssetImage(movieList[index].imagePath),
+                                fit: BoxFit.fill,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 10),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Text(
-                          movieList[index].title,
-                          style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white,
+                        const SizedBox(height: 10),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Text(
+                            movieList[index].title,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 );
               },

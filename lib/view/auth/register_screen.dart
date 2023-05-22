@@ -1,4 +1,3 @@
-
 import 'package:cinema_app/view/main/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -77,10 +76,10 @@ class RegisterForm extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   Text(
-                      'Sudah memiliki akun?',
-                      style: TextStyle(
-                        color: Colors.black,
-                      ),
+                    'Sudah memiliki akun?',
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
                   ),
                   Text(
                     'Login sekarang!',

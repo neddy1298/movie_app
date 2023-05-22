@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cinema_app/view/main/explore_screen.dart';
 import 'package:cinema_app/view/main/home_screen.dart';
-// import 'package:cinema_app/view/main/my_ticket_screen.dart';
-// import 'package:cinema_app/view/main/profile_screen.dart';
+import 'package:cinema_app/view/main/my_ticket_screen.dart';
 import 'package:cinema_app/view/main/nav_bar.dart';
 
 class MainPage extends StatefulWidget {
@@ -18,7 +17,7 @@ class _MainScreenState extends State<MainPage> {
   final List<Widget> pages = [
     const HomePage(),
     const ExplorePage(),
-    // MyTicketScreen(),
+    const MyTicketPage(),
     // ProfileScreen(),
   ];
 
@@ -31,7 +30,6 @@ class _MainScreenState extends State<MainPage> {
         selectedIndex: _selectedIndex,
         onItemTapped: _onItemTapped,
       ),
-
     );
   }
 

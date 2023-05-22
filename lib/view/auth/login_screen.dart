@@ -1,5 +1,3 @@
-
-
 import 'package:cinema_app/view/main/main_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -27,20 +25,20 @@ class LoginForm extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            const TextField(
+            TextField(
               decoration: InputDecoration(
                 hintText: 'Username',
               ),
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 24,
               ),
             ),
             const SizedBox(height: 10),
-            const TextField(
+            TextField(
               decoration: InputDecoration(
                 hintText: 'Password',
               ),
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 24,
               ),
               obscureText: true,

@@ -1,11 +1,11 @@
 import 'package:cinema_app/data/movie_data.dart';
-import 'package:cinema_app/view/main/main_screen.dart';
+import 'package:cinema_app/view/main/booking_screen.dart';
 import 'package:flutter/material.dart';
 
-class MovieDetailScreen extends StatelessWidget {
+class MovieDetailPage extends StatelessWidget {
   final Movie movie;
 
-  const MovieDetailScreen({Key? key, required this.movie}) : super(key: key);
+  const MovieDetailPage({Key? key, required this.movie}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +82,7 @@ class MovieDetailScreen extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const MainPage()),
+                          MaterialPageRoute(builder: (context) => BookingPage(movieTitle: movie.title, ticketPrice: movie.ticketPrice, image: movie.imagePath, dates: movie.dates, times: movie.times,seatAvailability: movie.seatAvailability,)),
                         );
                       },
                       style: ElevatedButton.styleFrom(

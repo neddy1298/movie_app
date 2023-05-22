@@ -11,17 +11,17 @@ class HomePage extends StatelessWidget {
       backgroundColor: Colors.transparent,
       body: Column(
         children: [
-          const SizedBox(height: 50.0),
+          SizedBox(height: 50.0),
           Padding(
             padding: const EdgeInsets.all(18.0),
             child: Row(
-              children: const [
+              children: [
                 Text(
                   'Hello ',
                   style: TextStyle(
                     fontSize: 22.0,
                     color: Colors.white,
-                    fontWeight: FontWeight.bold, // Make the text bold
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
@@ -44,29 +44,29 @@ class HomePage extends StatelessWidget {
               decoration: InputDecoration(
                 hintText: 'Search',
                 filled: true,
-                fillColor: const Color(0xFF2A2B37).withOpacity(0.7),
+                fillColor: Color(0xFF2A2B37).withOpacity(0.7),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(26.0),
                 ),
-                prefixIcon: const Icon(
+                prefixIcon: Icon(
                   Icons.search,
                   color: Colors.white,
                 ),
-                hintStyle: const TextStyle(color: Colors.white),
+                hintStyle: TextStyle(color: Colors.white),
               ),
             ),
           ),
-          const SizedBox(height: 20.0),
+          SizedBox(height: 20.0),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18.0),
             child: Row(
-              children: const [
+              children: [
                 Text(
                   'Feature ',
                   style: TextStyle(
                     fontSize: 25.0,
                     color: Colors.white,
-                    fontWeight: FontWeight.bold, // Make the text bold
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
@@ -87,7 +87,7 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 20.0),
+          SizedBox(height: 20.0),
           Expanded(
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
@@ -98,7 +98,8 @@ class HomePage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MovieDetailScreen(movie: movieList[index]),
+                        builder: (context) =>
+                            MovieDetailPage(movie: movieList[index]),
                       ),
                     );
                   },
@@ -114,4 +115,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
