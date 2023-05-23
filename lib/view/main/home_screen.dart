@@ -11,11 +11,11 @@ class HomePage extends StatelessWidget {
       backgroundColor: Colors.transparent,
       body: Column(
         children: [
-          SizedBox(height: 50.0),
+          const SizedBox(height: 50.0),
           Padding(
             padding: const EdgeInsets.all(18.0),
             child: Row(
-              children: [
+              children: const [
                 Text(
                   'Hello ',
                   style: TextStyle(
@@ -44,23 +44,23 @@ class HomePage extends StatelessWidget {
               decoration: InputDecoration(
                 hintText: 'Search',
                 filled: true,
-                fillColor: Color(0xFF2A2B37).withOpacity(0.7),
+                fillColor: const Color(0xFF2A2B37).withOpacity(0.7),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(26.0),
                 ),
-                prefixIcon: Icon(
+                prefixIcon: const Icon(
                   Icons.search,
                   color: Colors.white,
                 ),
-                hintStyle: TextStyle(color: Colors.white),
+                hintStyle: const TextStyle(color: Colors.white),
               ),
             ),
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18.0),
             child: Row(
-              children: [
+              children: const [
                 Text(
                   'Feature ',
                   style: TextStyle(
@@ -87,7 +87,7 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
           Expanded(
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
